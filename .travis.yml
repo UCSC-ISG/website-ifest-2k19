@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+- "lts/*"
+branches:
+  only:
+  - master
+  # - develop
+script:
+- if [ "$TRAVIS_BRANCH" == "master" ]; then npm run build:prod; else npm run build:prod; fi
+deploy:
+- provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: dist
+  repo: UCSC-ISG/ifest_2k19github.io
+  target-branch: master
+  verbose: true
+  on:
+    repo: UCSC-ISG/website-ifest-2k19
+    branch: master
+# - provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN
+#   keep-history: true
+#   local-dir: dist
+#   verbose: true
+#   on:
+#     repo: SLIOI/website-NOI
+#     branch: develop
