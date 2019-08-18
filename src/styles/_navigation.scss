@@ -1,6 +1,7 @@
 @import "mixing";
+@import "variables";
 
-$navigation-background-color: #171717;
+$navigation-background-color: $primary-color;
 $mobile-responsive-width: 464px;
 $navigation-background-color--transparent: transparentize(
   $color: black,
@@ -9,7 +10,7 @@ $navigation-background-color--transparent: transparentize(
 
 #nvigation {
   height: 56px;
-  //   background-color: $navigation-background-color;
+  //   background-color: $primary-color;
   position: relative;
   z-index: 10000;
 
@@ -55,22 +56,21 @@ $navigation-background-color--transparent: transparentize(
           width: 100%;
           align-content: center;
           justify-content: center;
-          $mobile-responsive-btn-primary-color: #00649d;
           .mobile-responsive-btn {
-            border: 1.5px solid $mobile-responsive-btn-primary-color;
+            border: 1.5px solid $primary-color;
             border-color: transparent;
             background-color: transparent;
             border-radius: 4px;
-            color: $mobile-responsive-btn-primary-color;
+            color: $primary-color;
             display: grid;
             align-content: center;
             padding: 5px;
             transition: 0.5s;
           }
           .mobile-responsive-btn:hover {
-            background-color: $mobile-responsive-btn-primary-color;
+            // background-color: $mobile-responsive-btn-primary-color;
             border-color: transparent;
-            color: $navigation-background-color;
+            color: $primary-color;
             cursor: pointer;
           }
         }
@@ -168,7 +168,7 @@ $navigation-background-color--transparent: transparentize(
             a {
               button {
                 &::after {
-                  background-color: #00639dbf;
+                  background-color: $primary-color;
                   animation: nav-item-animation 0.5s ease-in-out forwards;
                 }
               }
