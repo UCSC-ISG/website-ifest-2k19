@@ -2,4 +2,40 @@
 @import "./mixing";
 @import "../fonts/fonts";
 
+$color-content: #1c1b1b;
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  // color: #57585c;
+  // color: var(--color-text);
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+#smoke {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #000000;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+@import "./navigation";
+
+button {
+  outline: none;
+}
