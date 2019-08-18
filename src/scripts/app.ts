@@ -7,8 +7,26 @@ new FullPageJS('#fullpage', {
 	autoScrolling: true,
 	scrollHorizontally: true,
 	navigation: true,
-	anchors: ['home', 'about', 'shedule', 'sponsors', 'contactus', 'registration'],
-	menu: '#navigation-items-container'
+	anchors: ['home', 'about', 'shedule', 'registration', 'sponsors', 'contactus'],
+	menu: '#navigation-items-container',
+	responsiveWidth: '768',
+	onLeave: function(origin:any, destination:any, direction:string){
+		const navigation = $.default('#nvigation')
+		if (direction == 'up') {
+			navigation.animate({
+				top:'0'
+			})
+		}else if (direction == 'down') {
+			navigation.animate({
+				top:'-56px'
+			},'slow')
+		}
+	},
+	afterResponsive: function(isResponsive: boolean){
+		if (isResponsive) {
+			$.default('#contact-us, #contact-us .fp-tableCell').css('height','auto')			
+		}
+	},
 });
 
 require('./smoke')
@@ -30,6 +48,12 @@ mobile_responsive_nav_show_btn.click((e: any) => {
 })
 
 $.default('#navigation-items-container .nav-item button').click(e => {
+	if (mobile_responsive_nav_show_btn[0].lastElementChild.textContent == 'close') {
+		mobileResponsiveNavShowBtnClickAction()
+	}
+})
+
+$.default('#fullpage').click(e => {
 	if (mobile_responsive_nav_show_btn[0].lastElementChild.textContent == 'close') {
 		mobileResponsiveNavShowBtnClickAction()
 	}
