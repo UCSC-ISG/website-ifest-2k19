@@ -45,7 +45,8 @@ function init() {
   
 
     smokeTexture = THREE.ImageUtils.loadTexture(`./img/smoke.png`); // tectutr src
-    smokeMaterial = new THREE.MeshLambertMaterial({color: '#00659d', map: smokeTexture, transparent: true});
+    smokeMaterial = new THREE.MeshLambertMaterial({color: '#a31c49', map: smokeTexture, transparent: true});
+    // smokeMaterial = new THREE.MeshLambertMaterial({color: '#00659d', map: smokeTexture, transparent: true});
     smokeGeo = new THREE.PlaneGeometry(300,300);
     smokeParticles = [];
 
