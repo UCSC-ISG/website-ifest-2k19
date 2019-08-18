@@ -13,16 +13,24 @@ new FullPageJS('#fullpage', {
 
 require('./smoke')
 
-const mobile_responsive_nav_show_btn:any =  $.default("#mobile-responsive-btn")
+const mobile_responsive_nav_show_btn: any = $.default("#mobile-responsive-btn")
 
-mobile_responsive_nav_show_btn.click((e:any) => {
+const mobileResponsiveNavShowBtnClickAction = () => {
 	const nav_dropdown_container = $.default('#navigation-item-container')
 	nav_dropdown_container.slideToggle(300, () => {
 		if (nav_dropdown_container.is(':hidden')) {
-			console.log(mobile_responsive_nav_show_btn[0].lastElementChild.textContent = 'menu');
-			
-		}else {
+			mobile_responsive_nav_show_btn[0].lastElementChild.textContent = 'menu'
+		} else {
 			mobile_responsive_nav_show_btn[0].lastElementChild.textContent = 'close'
 		}
 	})
+}
+mobile_responsive_nav_show_btn.click((e: any) => {
+	mobileResponsiveNavShowBtnClickAction()
+})
+
+$.default('#navigation-items-container .nav-item button').click(e => {
+	if (mobile_responsive_nav_show_btn[0].lastElementChild.textContent == 'close') {
+		mobileResponsiveNavShowBtnClickAction()
+	}
 })
