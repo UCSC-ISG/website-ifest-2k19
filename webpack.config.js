@@ -82,6 +82,7 @@ module.exports = {
 			{from: 'src/**/*.woff', to: 'fonts/', flatten: true},
             {from: 'src/**/*.png', to: 'img/', flatten: true},
 			{from: 'src/**/*.svg', to: 'img/', flatten: true},
+			{from: 'src/**/*.jpg', to: 'img/', flatten: true},
 			{from: 'src/**/*.js', to: 'scripts/', flatten: true},
             {from: 'LICENSE', flatten: true},
             {from: 'README.md', flatten: true}
