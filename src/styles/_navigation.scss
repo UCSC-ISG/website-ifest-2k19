@@ -1,0 +1,109 @@
+$navigation-background-color: #171717;
+
+#nvigation {
+  height: 56px;
+//   background-color: $navigation-background-color;
+  position: relative;
+  z-index: 10000;
+  .mobile-responsive-controller-container {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    .mobile-responsive-controller-container__inner {
+      display: grid;
+      grid-template-columns: 60px auto 56px;
+      height: 100%;
+      .logo-container {
+        height: 100%;
+        width: 100%;
+        .logo-container__inner {
+          display: grid;
+          height: 100%;
+          width: 100%;
+          align-content: center;
+        }
+      }
+      .mobile-responsive-btn-container {
+        height: 100%;
+        width: 100%;
+        .mobile-responsive-btn-container__inner {
+          display: grid;
+          height: 100%;
+          width: 100%;
+          align-content: center;
+          justify-content: center;
+          a {
+            text-decoration: none;
+            $mobile-responsive-btn-primary-color: #00649d;
+            .mobile-responsive-btn {
+              border: 1.5px solid $mobile-responsive-btn-primary-color;
+              background-color: transparent;
+              border-radius: 4px;
+              color: $mobile-responsive-btn-primary-color;
+              display: grid;
+              align-content: center;
+              padding: 5px;
+              transition: 0.5s;
+            }
+            .mobile-responsive-btn:hover {
+              background-color: $mobile-responsive-btn-primary-color;
+              border-color: transparent;
+              color: $navigation-background-color;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navigation-item-container {
+    height: 100%;
+    .navigation-item-container__inner__outer {
+        display: grid;
+        height: 100%;
+        justify-content: center;
+        grid-template-columns: 70%;
+      .navigation-item-container__inner {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 60px auto;
+        grid-column-gap: 30px;
+      }
+    }
+  }
+}
+
+#nvigation.nvigation--fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo-container {
+  width: 60px;
+  display: grid;
+  align-content: center;
+}
+
+.navigation-items-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 10px;
+  align-content: center;
+  li.nav-item {
+    a {
+      text-decoration: none;
+      button {
+          border: 0;
+          background-color: transparent;
+          color: white;
+      }
+    }
+  }
+}
