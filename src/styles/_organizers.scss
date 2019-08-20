@@ -11,6 +11,8 @@
     color: white;
 
     .main-content {
+      display: grid;
+      align-content: center;
       .main-content__inner {
         height: 100%;
         display: grid;
@@ -35,15 +37,20 @@
             display: grid;
             align-content: center;
 
-            .logo-image-container {
-              .logo-image{
+            .organizers-container {
+              text-align: center;
+              //width: 100%;
+              margin: auto;
+
+              .organizer-logo{
                 border-radius: 10px;
                 margin-top: 5%;
                 margin-bottom: 5%;
 
-                @include responsive-form-max-width(992px){
-                  width: 40%;
-                  display: inline;
+                @include responsive-form-max-width(769px){
+                  width: 50%;
+                  alignment: center;
+                  //display: inline;
                 }
               }
             }

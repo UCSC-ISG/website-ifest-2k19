@@ -9,11 +9,13 @@
     display: grid;
     grid-template-rows: auto 50px;
     color: white;
+    align-content: center;
 
     .main-content {
       .main-content__inner {
         height: 100%;
         display: grid;
+        align-content: center;
         grid-template-rows: min-content auto 100px 50px;
 
         @include responsive-form-max-width(487px) {
