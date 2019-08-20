@@ -1,0 +1,112 @@
+@import "variables";
+@import "mixing";
+
+#registrationStn {
+  .registration__inner {
+    width: 100%;
+    height: 100%;
+    grid-template-rows: auto 50px;
+    color: white;
+    display: grid;
+    align-content: center;
+
+    .main-content {
+      .main-content__inner {
+        height: 100%;
+        grid-template-rows: min-content auto 100px 50px;
+
+        @include responsive-form-max-width(487px) {
+          grid-template-rows: min-content auto 100px 70px;
+        }
+
+        .heading-container {
+          padding-top: 1em;
+
+          p {
+            text-align: center;
+            font-size: 2em;
+            color: $primary-color;
+          }
+        }
+
+        .main-content__inner-middle {
+          .main-content__inner-middle__inner {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            align-content: center;
+            font-size: 15pt;
+
+            .col{
+              text-align: end;
+            }
+
+            //  Button Animation
+            $anime-time: 8s;
+
+            $box-size: 150px;
+            $clip-distance: .05;
+            $clip-size: $box-size * (1 + $clip-distance * 2);
+            $path-width: 2px;
+
+            %full-fill {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+            }
+
+            #regBtn {
+              @extend %full-fill;
+              width: $box-size;
+              height: $box-size;
+              //margin: auto;
+              margin-left: auto;
+              margin-right: auto;
+              background: rgba(#000, .1);
+              color: $primary-color;
+              box-shadow: inset 0 0 0 1px rgba($primary-color, .5);
+
+              &::before,
+              &::after {
+                @extend %full-fill;
+                content: '';
+                //z-index: -1;
+                margin: -1 * $clip-distance * 100%;
+                box-shadow: inset 0 0 0 $path-width;
+                animation: clipMe $anime-time linear infinite;
+              }
+
+              &::before {
+                animation-delay: $anime-time * -.5;
+              }
+            }
+
+            @keyframes clipMe {
+              0%, 100% {
+                clip: rect(0px, $clip-size, $path-width, 0px);
+              }
+              25% {
+                clip: rect(0px, $path-width, $clip-size, 0px);
+              }
+              50% {
+                clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px);
+              }
+              75% {
+                clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width);
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@include responsive-form-max-width($respinsive-width) {
+  section[style] {
+    height: unset;
+  }
+}
