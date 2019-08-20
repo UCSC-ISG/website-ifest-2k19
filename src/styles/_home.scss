@@ -1,0 +1,47 @@
+@import "variables";
+@import "mixing";
+
+#homeStn {
+  .home__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 50px;
+    color: white;
+
+    .main-content {
+      .main-content__inner {
+        height: 100%;
+        display: grid;
+        grid-template-rows: min-content auto 100px 50px;
+
+        @include responsive-form-max-width(487px) {
+          grid-template-rows: min-content auto 100px 70px;
+        }
+
+        .heading-container {
+          padding-top: 1em;
+          p {
+            text-align: center;
+            font-size: 2em;
+          }
+        }
+        .main-content__inner-middle {
+          .main-content__inner-middle__inner {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            align-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include responsive-form-max-width($respinsive-width) {
+  section[style] {
+    height: unset;
+  }
+}
