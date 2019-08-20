@@ -5,17 +5,14 @@
   .about__inner {
     width: 100%;
     height: 100%;
-    position: relative;
-    display: grid;
     grid-template-rows: auto 50px;
     color: white;
+    display: grid;
     align-content: center;
 
     .main-content {
       .main-content__inner {
         height: 100%;
-        display: grid;
-        align-content: center;
         grid-template-rows: min-content auto 100px 50px;
 
         @include responsive-form-max-width(487px) {
@@ -36,6 +33,7 @@
             width: 100%;
             display: grid;
             align-content: center;
+            font-size: 15pt;
 
             .logo-image-container {
               .logo-image{
@@ -46,6 +44,7 @@
                 @include responsive-form-max-width(992px){
                   width: 40%;
                   display: inline;
+
                 }
               }
             }

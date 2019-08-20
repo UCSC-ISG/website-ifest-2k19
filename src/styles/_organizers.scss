@@ -49,7 +49,9 @@
 
                 @include responsive-form-max-width(769px){
                   width: 50%;
-                  alignment: center;
+                  margin-right: 50%;
+                  margin-left: 50%;
+                  transform: translateX(-50%);
                   //display: inline;
                 }
               }
