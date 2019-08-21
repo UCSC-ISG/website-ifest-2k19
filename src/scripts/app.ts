@@ -1,11 +1,13 @@
-import * as $ from 'jquery'
+import * as $ from 'jquery';
 
-const FullPageJS = require('fullpage.js');
+const IScroll = require('fullpage.js/vendors/scrolloverflow.js');
+const FullPageJS = require('fullpage.js/dist/fullpage.extensions.min');
 
 new FullPageJS('#fullpage', {
 	//options here
 	autoScrolling: true,
 	scrollHorizontally: true,
+	scrollOverflow:true,
 	navigation: true,
 	anchors: ['home', 'about', 'schedule', 'registration', 'organizers', 'contactus'],
 	menu: '#navigation-items-container',
