@@ -16,11 +16,8 @@
       .main-content__inner {
         height: 100%;
         display: grid;
-        grid-template-rows: min-content auto 100px 50px;
+        grid-template-rows: min-content auto;
 
-        @include responsive-form-max-width(487px) {
-          grid-template-rows: min-content auto 100px 70px;
-        }
 
         .heading-container {
           padding-top: 1em;
