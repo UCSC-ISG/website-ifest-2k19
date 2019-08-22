@@ -2,6 +2,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./mixing";
 @import "../fonts/fonts";
+@import "../../node_modules/fullpage.js/dist/fullpage.min.css";
 
 $color-content: #1c1b1b;
 
@@ -38,6 +39,7 @@ body {
 @import "./home";
 @import "./about";
 @import "./organizers";
+@import "./schedule";
 @import "./registration";
 @import "./contact-us";
 
@@ -59,4 +61,8 @@ a {
   &:focus {
     outline: none;
   }
+}
+
+#fp-nav {
+  display: none;
 }
