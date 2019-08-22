@@ -16,24 +16,37 @@ new FullPageJS('#fullpage', {
 		const navigation = $.default('#nvigation');
 		if (direction == 'up') {
 			navigation.animate({
-				top: '0'
-			})
+				top: '0',
+			}, 'fast')
+
 		} else if (direction == 'down') {
 			navigation.animate({
 				top: '-56px'
-			}, 'slow', function () {
-				if (!$.default('#navigation-item-container').is(':hidden')) {
-					$.default('#mobile-responsive-btn').click()
+			}, 'fast', function () {
+				if ($.default(origin.item).hasClass('respinsive_section')) {
+					if (!$.default('#navigation-item-container').is(':hidden')) {
+
+						$.default('#mobile-responsive-btn').click()
+
+					}
 				}
+
+
 			})
 
 		}
 	},
 	afterResponsive: function (isResponsive: boolean) {
+
 		if (isResponsive) {
 			$.default('#contact-us, #contact-us .fp-tableCell').css('height', 'auto')
+			$.default('#scheduleStn, #scheduleStn .fp-tableCell').css('height', 'unset')
+
+			$.default('.section').addClass('respinsive_section')
+
+
 		}
-	},
+	}
 });
 
 require('./smoke');
