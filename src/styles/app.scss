@@ -66,3 +66,15 @@ a {
 #fp-nav {
   display: none;
 }
+
+#scheduleStn[style], #scheduleStn div.fp-tableCell[style] {
+  @include responsive-form-max-width(768px) {
+    height: unset;
+  }
+
+  .schedule__inner[style] {
+    @include responsive-form-max-width(768px) {
+      height: unset;
+    }
+  }
+}
