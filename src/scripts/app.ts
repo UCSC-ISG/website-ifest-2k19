@@ -17,11 +17,11 @@ new FullPageJS('#fullpage', {
 		if (direction == 'up') {
 			navigation.animate({
 				top: '0'
-			})
+			}, 'fast')
 		} else if (direction == 'down') {
 			navigation.animate({
 				top: '-56px'
-			}, 'slow', function () {
+			}, 'fast', function () {
 				if (!$.default('#navigation-item-container').is(':hidden')) {
 					$.default('#mobile-responsive-btn').click()
 				}
@@ -30,10 +30,12 @@ new FullPageJS('#fullpage', {
 		}
 	},
 	afterResponsive: function (isResponsive: boolean) {
+
 		if (isResponsive) {
 			$.default('#contact-us, #contact-us .fp-tableCell').css('height', 'auto')
+			$.default('#scheduleStn, #scheduleStn .fp-tableCell').css('height', 'unset')
 		}
-	},
+	}
 });
 
 require('./smoke');
