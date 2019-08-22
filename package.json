@@ -15,8 +15,8 @@
   },
   "maintainers": [
     "Nishan Wijethunga",
-    "Ravindu Ramesh",
-    "Oshan Mendis"
+    "Missaka Iddamalgoda",
+    "Dimuthu Kasun"
   ],
   "author": "UCSC-ISG",
   "license": "ISC",
@@ -53,6 +53,7 @@
     "@types/fullpage.js": "^2.9.0",
     "animejs": "^3.1.0",
     "bootstrap": "^4.3.1",
+    "emailjs-com": "^2.3.2",
     "fullpage.js": "^3.0.7",
     "gsap": "^2.1.2",
     "jquery": "^3.4.1",
