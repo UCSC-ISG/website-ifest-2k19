@@ -198,7 +198,7 @@
                 }
               }
 
-              @include responsive-form-max-width(372px) {
+              @include responsive-form-max-width(398px) {
                 span:nth-child(4) {
                   border-right: 1px solid white;
                 }
@@ -215,7 +215,7 @@
       color: $ternary-color;
       font-size: 0.8em;
       text-align: center;
-      padding: 3px 0;
+      padding: 3px 2px;
     }
   }
 }
