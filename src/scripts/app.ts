@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 const IScroll = require('fullpage.js/vendors/scrolloverflow.js');
 const FullPageJS = require('fullpage.js/dist/fullpage.extensions.min');
 
+
 new FullPageJS('#fullpage', {
 	//options here
 	autoScrolling: true,
@@ -65,3 +66,32 @@ $.default('#fullpage').click(e => {
 		mobileResponsiveNavShowBtnClickAction()
 	}
 });
+
+//emailjs scripts
+const EmailJS = require('emailjs-com');
+
+EmailJS.init("user_5AY8slzcveJjmILxmVqZe");
+
+$.default('#submitBtn').click(function(e) {
+	e.preventDefault();
+	console.log("entered");
+	// var name    = document.getElementById('inputName');
+	var name=$.default("#contact-name").val();
+	// var email   = document.getElementById('inputEmail');
+	var email=$.default("#contact-email").val();
+	// var message = document.getElementById('inputMessage');
+	var message=$.default("#contact-message").val();
+
+	var content={"message":message,"name":name,"email":email};
+	console.log(content);
+	EmailJS.send("gmail", "template_V9Ko7dFs", content, "user_5AY8slzcveJjmILxmVqZe").then(function(response:any) {
+		console.log('SUCCESS!', response.status, response.text);
+	}, function(error:any) {
+		console.log('FAILED...', error);
+	});
+});
+
+
+
+
+
