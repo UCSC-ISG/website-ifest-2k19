@@ -7,6 +7,12 @@
     <title>UCSC - ISG</title>
     <link rel="stylesheet" type="text/css" href="app.min.css">
     <link rel="shortcut icon" href="./img/isaca-browser-logo.png" type="image/x-icon">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        .timeline__item {
+            background-image: url('./img/outlets.png')
+        }
+    </style>
 </head>
 <body>
 <div id="smoke"></div>
@@ -43,7 +49,7 @@
                     <li data-menuanchor="about" class="nav-item"><a href="#about">
                         <button>About</button>
                     </a></li>
-                    <li data-menuanchor="schedule" class="nav-item"><a href="#shedule">
+                    <li data-menuanchor="schedule" class="nav-item"><a href="#schedule">
                         <button>Schedule</button>
                     </a></li>
                     <li data-menuanchor="organizers" class="nav-item"><a href="#organizers">
@@ -63,9 +69,17 @@
 <div id="fullpage">
     <section class="section" id="homeStn">
         <div class="home__inner">
+            <div class="logo-container">
+                <div class="logo-container__inner">
+                    <div class="logo">
+                        <img src="./img/isaca-logo.svg" class="img-responsive" alt="ISACA logo">
+                    </div>
+                </div>
+            </div>
             <div class="heading">
-                <h1>ICTer&nbsp;Conference&nbsp;2019</h1>
-                <h2>Post conference workshop on <strong>&quot;Resilience For Privacy In Cyberspace&quot;</strong></h2>
+                <h1 class="icter">ICTer&nbsp;Conference 2019</h1>
+                <h2 class="wst">Workshop on</h2>
+                <h2 class="ws"><strong>&quot;Resilience Through Privacy In Cyberspace&quot;</strong></h2>
             </div>
         </div>
     </section>
@@ -87,7 +101,7 @@
                                     <!--                                            <img class="img-responsive logo-image" src="./img/ucsc_logo.png" alt="">-->
                                     <!--                                        </div>-->
                                     <!--                                    </div>-->
-                                    <div class="col-lg-12 col-md-12">
+                                    <div class="col-lg-12 col-md-12" style="text-align: center">
                                         <p>
                                             The ICTer conference will be held in 3rd and 4th of september include
                                             several pre and
@@ -131,34 +145,119 @@
             </div>
         </div>
     </section>
-    <section class="section">Some section</section>
-    <section class="section" id="registrationStn">
-        <div class="registration__inner">
+
+    <section class="section" id="scheduleStn">
+        <div class="schedule__inner">
             <div class="main-content">
                 <div class="main-content__inner">
                     <div class="heading-container">
-                        <p>Registrations Open Now</p>
+                        <p>Schedule</p>
                     </div>
-                    <div class="main-content__inner-middle">
-                        <div class="main-content__inner-middle__inner">
-                            <div class="container c">
-                                <div class="row cr">
-                                    <div class="col col-md-6 col-sm-12">
-                                        <p>Date: 5<sup>th</sup> September 2019</p>
-                                        <p>Venue: UCSC Building Complex</p>
-                                    </div>
-                                    <div class="col col-md-6 col-sm-12">
-                                        <button id="regBtn">Register Now!</button>
-                                    </div>
-                                </div>
+                    <div class="main-content__inner-body">
+                        <div class="timeline">
+
+                            <h2 class="timeline__item timeline__item--year">9:00 AM</h2>
+
+                            <div class="timeline__item">
+                                <h3 class="timeline__title">Opening Ceremony</h3>
                             </div>
+
+                            <h2 class="timeline__item timeline__item--year">9:15 AM</h2>
+
+                            <div class="timeline__item">
+                                <h3 class="timeline__title">Welcome Speech</h3>
+                            </div>
+
+                            <h2 class="timeline__item timeline__item--year">9:25 AM</h2>
+
+                            <div class="timeline__item">
+                                <h3 class="timeline__title">Session and Panel Discussion</h3>
+                                <p class="timeline__blurb">Governance, Risk management and Compliance</p>
+                            </div>
+
+                            <h2 class="timeline__item timeline__item--year">12:25 PM</h2>
+
+                            <div class="timeline__item">
+                                <h3 class="timeline__title">Lunch Break</h3>
+                            </div>
+
+                            <h2 class="timeline__item timeline__item--year">1:30 PM</h2>
+
+                            <div class="timeline__item">
+                                <h3 class="timeline__title">Session and Panel Discussion</h3>
+                                <p class="timeline__blurb">Protect Personal info</p>
+                            </div>
+
+                            <h2 class="timeline__item timeline__item--year">4:40 PM</h2>
+
+                            <div class="timeline__item">
+                                <h3 class="timeline__title">Vote of thanks</h3>
+                            </div>
+
+                            <h2 class="timeline__item timeline__item--year">4:45 PM</h2>
+
+                            <!--                            <div class="timeline__item">-->
+                            <!--                                <h3 class="timeline__title">First Child</h3>-->
+                            <!--                                <p class="timeline__blurb">Spouse and I welcomed our first daughter.</p>-->
+                            <!--                            </div>-->
+
+                            <!--                            <h2 class="timeline__item timeline__item&#45;&#45;year">2015</h2>-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section" id="organizerStn">
+
+    <section class="section" id="registrationStn">
+        <div class="registration__inner">
+            <div class="main-content">
+                <div class="main-content__inner">
+                    <div class="heading-container">
+                        <p>Registrations Open&nbsp;Soon</p>
+                    </div>
+                    <div class="main-content__inner-after-heading">
+                        <div class="venue-time-details">
+                            <div class="venue">
+                                <p>
+                                    <i class="material-icons">calendar_today</i><span>5<sup>th</sup> September 2019</span>
+                                </p>
+                            </div>
+                            <div class="time">
+                                <p><i class="material-icons">location_on</i><span>UCSC Building Complex</span></p>
+                            </div>
+                        </div>
+                        <p style="text-align: center;padding: 2em 5px">
+                            <button id="regBtn" class="ripple" style="background-image:url('./img/outlets.png')">Coming
+                                Soon!
+                            </button>
+                        </p>
+                    </div>
+                    <!-- <div class="main-content__inner-middle">
+                        <div class="main-content__inner-middle__inner">
+                            <div class="container">
+                                <div class="row cr" id="reg-container">
+                                    <div class="col col-md-6 col-sm-12">
+                                        <p><i class="material-icons">
+                                                calendar_today
+                                                </i>: 5<sup>th</sup> September 2019</p>
+                                        <p><i class="material-icons">
+                                                location_on
+                                                </i> UCSC Building Complex</p>
+                                    </div>
+                                    <div class="col col-md-6 col-sm-12">
+                                        <button id="regBtn" disabled>Coming Soon!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="organizerStn" style="background-image:url('./img/outlets.png')">
         <div class="organizer__inner">
             <div class="main-content">
                 <div class="main-content__inner">
@@ -229,7 +328,7 @@
                                     </div>
                                     <div class="col-md-5">
                                         <form action="" method="post">
-                                            <div class="form">
+                                            <div id="contact-form" class="form">
                                                 <div class="container-fluid form-inner">
                                                     <div class="row">
                                                         <div class="col-md-12">
@@ -239,7 +338,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <p><input type="email" name="contact-email" id=""
+                                                            <p><input type="email" name="contact-email"
+                                                                      id="contact-email"
                                                                       placeholder="Email"></p>
                                                         </div>
                                                     </div>
@@ -251,7 +351,11 @@
                                                         </div>
                                                     </div>
                                                     <p>
-                                                        <button type="submit">Submit</button>
+                                                        <button id="submitBtn" type="submit" class="g-recaptcha"
+                                                                data-sitekey="6LdjRbQUAAAAABWeJKxmZK8QvKjDLdxNvquIwYLN"
+                                                                data-callback="onSubmit">
+                                                            Submit
+                                                        </button>
                                                     </p>
                                                 </div>
                                             </div>
@@ -267,7 +371,7 @@
                                 <li class="social-links__items">
                                     <a href="" target="_blank">
                                         <button>
-                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                            <svg viewBox="0 0 24 24">
                                                 <path class="social-icon-path" d="M17,2V2H17V6H15C14.31,6
                                                             14,6.81
                                                             14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4
@@ -279,7 +383,7 @@
                                 <li class="social-links__items">
                                     <a href="" target="_blank">
                                         <button>
-                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                            <svg viewBox="0 0 24 24">
                                                 <path class="social-icon-path"
                                                       d="M21,21H17V14.25C17,13.19
                                                             15.81,12.31
@@ -301,7 +405,7 @@
                                 <li class="social-links__items">
                                     <a href="" target="_blank">
                                         <button>
-                                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                            <svg viewBox="0 0 24 24">
                                                 <path class="social-icon-path"
                                                       d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64
                                                             21.78,8.27
@@ -349,7 +453,7 @@
                             <p>
                                 <span data-menuanchor="home"><a href="#home">Home</a></span>
                                 <span data-menuanchor="about"><a href="#about">About</a></span>
-                                <span data-menuanchor="schedule"><a href="#shedule">Schedule</a></span>
+                                <span data-menuanchor="schedule"><a href="#schedule">Schedule</a></span>
                                 <span data-menuanchor="organizers"><a href="#organizers">Organized&nbsp;By</a></span>
                                 <span data-menuanchor="contactus"><a href="#contactus">Contact&nbsp;Us</a></span>
                             </p>
@@ -357,11 +461,10 @@
                     </div>
                 </div>
             </div>
-            <div class="copyright-text"><p>Copyright &copy; 2019 UCSC ISACA Student Group. All rights reserved.</p>
+            <div class="copyright-text"><p>Copyright &copy; 2019 UCSC ISACA Student Group. All&nbsp;rights&nbsp;reserved.</p>
             </div>
         </div>
     </section>
 </div>
-<script src="main.min.js" async></script>
 </body>
 </html>
