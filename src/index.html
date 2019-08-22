@@ -7,10 +7,11 @@
     <title>UCSC - ISG</title>
     <link rel="stylesheet" type="text/css" href="app.min.css">
     <link rel="shortcut icon" href="./img/isaca-browser-logo.png" type="image/x-icon">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
-    .timeline__item {
-        background-image: url('./img/outlets.png')
-    }
+        .timeline__item {
+            background-image: url('./img/outlets.png')
+        }
     </style>
 </head>
 <body>
@@ -195,12 +196,12 @@
 
                             <h2 class="timeline__item timeline__item--year">4:45 PM</h2>
 
-<!--                            <div class="timeline__item">-->
-<!--                                <h3 class="timeline__title">First Child</h3>-->
-<!--                                <p class="timeline__blurb">Spouse and I welcomed our first daughter.</p>-->
-<!--                            </div>-->
+                            <!--                            <div class="timeline__item">-->
+                            <!--                                <h3 class="timeline__title">First Child</h3>-->
+                            <!--                                <p class="timeline__blurb">Spouse and I welcomed our first daughter.</p>-->
+                            <!--                            </div>-->
 
-<!--                            <h2 class="timeline__item timeline__item&#45;&#45;year">2015</h2>-->
+                            <!--                            <h2 class="timeline__item timeline__item&#45;&#45;year">2015</h2>-->
                         </div>
                     </div>
                 </div>
@@ -208,7 +209,7 @@
         </div>
     </section>
 
-    <section class="section" id="registrationStn" >
+    <section class="section" id="registrationStn">
         <div class="registration__inner">
             <div class="main-content">
                 <div class="main-content__inner">
@@ -218,13 +219,19 @@
                     <div class="main-content__inner-after-heading">
                         <div class="venue-time-details">
                             <div class="venue">
-                                <p><i class="material-icons">calendar_today</i><span>5<sup>th</sup> September 2019</span></p>
+                                <p>
+                                    <i class="material-icons">calendar_today</i><span>5<sup>th</sup> September 2019</span>
+                                </p>
                             </div>
                             <div class="time">
                                 <p><i class="material-icons">location_on</i><span>UCSC Building Complex</span></p>
                             </div>
                         </div>
-                        <p style="text-align: center;padding: 2em 5px"><button id="regBtn" class="ripple" style="background-image:url('./img/outlets.png')">Coming Soon!</button></p>
+                        <p style="text-align: center;padding: 2em 5px">
+                            <button id="regBtn" class="ripple" style="background-image:url('./img/outlets.png')">Coming
+                                Soon!
+                            </button>
+                        </p>
                     </div>
                     <!-- <div class="main-content__inner-middle">
                         <div class="main-content__inner-middle__inner">
@@ -249,6 +256,7 @@
             </div>
         </div>
     </section>
+
     <section class="section" id="organizerStn" style="background-image:url('./img/outlets.png')">
         <div class="organizer__inner">
             <div class="main-content">
@@ -330,7 +338,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <p><input type="email" name="contact-email" id="contact-email"
+                                                            <p><input type="email" name="contact-email"
+                                                                      id="contact-email"
                                                                       placeholder="Email"></p>
                                                         </div>
                                                     </div>
@@ -342,7 +351,11 @@
                                                         </div>
                                                     </div>
                                                     <p>
-                                                        <button id="submitBtn" type="submit">Submit</button>
+                                                        <button id="submitBtn" type="submit" class="g-recaptcha"
+                                                                data-sitekey="6LdjRbQUAAAAABWeJKxmZK8QvKjDLdxNvquIwYLN"
+                                                                data-callback="onSubmit">
+                                                            Submit
+                                                        </button>
                                                     </p>
                                                 </div>
                                             </div>

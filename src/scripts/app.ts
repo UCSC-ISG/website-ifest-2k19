@@ -87,7 +87,10 @@ EmailJS.init("user_5AY8slzcveJjmILxmVqZe");
 
 $.default('#submitBtn').click(function(e) {
 	e.preventDefault();
-	console.log("entered");
+});
+
+function onSubmit(token:any) {
+	// console.log("entered");
 	// var name    = document.getElementById('inputName');
 	var name=$.default("#contact-name").val();
 	// var email   = document.getElementById('inputEmail');
@@ -96,13 +99,15 @@ $.default('#submitBtn').click(function(e) {
 	var message=$.default("#contact-message").val();
 
 	var content={"message":message,"name":name,"email":email};
-	console.log(content);
+	// console.log(content);
 	EmailJS.send("gmail", "template_V9Ko7dFs", content, "user_5AY8slzcveJjmILxmVqZe").then(function(response:any) {
 		console.log('SUCCESS!', response.status, response.text);
 	}, function(error:any) {
 		console.log('FAILED...', error);
 	});
-});
+}
+
+(<any>window).onSubmit = onSubmit;
 
 
 
