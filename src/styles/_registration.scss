@@ -5,7 +5,6 @@
   .registration__inner {
     width: 100%;
     height: 100%;
-    grid-template-rows: auto 50px;
     color: white;
     display: grid;
     align-content: center;
@@ -13,14 +12,9 @@
     .main-content {
       .main-content__inner {
         height: 100%;
-        grid-template-rows: min-content auto 100px 50px;
-
-        @include responsive-form-max-width(487px) {
-          grid-template-rows: min-content auto 100px 70px;
-        }
 
         .heading-container {
-          padding-top: 1em;
+          padding: 2em;
 
           p {
             text-align: center;
@@ -29,77 +23,34 @@
           }
         }
 
-        .main-content__inner-middle {
-          .main-content__inner-middle__inner {
-            height: 100%;
-            width: 100%;
+        .main-content__inner-after-heading {
+          display: grid;
+          justify-content: center;
+          .venue-time-details {
             display: grid;
-            align-content: center;
-            font-size: 15pt;
+            grid-template-columns: repeat(2, 1fr);
 
-            .col{
-              text-align: end;
+            @include responsive-form-max-width(422px) {
+              grid-template-columns: unset;
+              justify-content: center;
             }
 
-            //  Button Animation
-            $anime-time: 8s;
-
-            $box-size: 150px;
-            $clip-distance: .05;
-            $clip-size: $box-size * (1 + $clip-distance * 2);
-            $path-width: 2px;
-
-            %full-fill {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
-            }
-
-            #regBtn {
-              @extend %full-fill;
-              width: $box-size;
-              height: $box-size;
-              //margin: auto;
-              margin-left: auto;
-              margin-right: auto;
-              background: rgba(#000, .1);
-              color: $primary-color;
-              box-shadow: inset 0 0 0 1px rgba($primary-color, .5);
-
-              &::before,
-              &::after {
-                @extend %full-fill;
-                content: '';
-                //z-index: -1;
-                margin: -1 * $clip-distance * 100%;
-                box-shadow: inset 0 0 0 $path-width;
-                animation: clipMe $anime-time linear infinite;
-              }
-
-              &::before {
-                animation-delay: $anime-time * -.5;
+            .venue {
+              p {
+                display: grid;
+                grid-template-columns: 20px auto;
+                grid-column-gap: 10px;
               }
             }
-
-            @keyframes clipMe {
-              0%, 100% {
-                clip: rect(0px, $clip-size, $path-width, 0px);
-              }
-              25% {
-                clip: rect(0px, $path-width, $clip-size, 0px);
-              }
-              50% {
-                clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px);
-              }
-              75% {
-                clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width);
+            .time {
+              p {
+                display: grid;
+                grid-template-columns: 20px auto;
+                grid-column-gap: 10px;
               }
             }
           }
         }
-
       }
     }
   }
@@ -108,5 +59,108 @@
 @include responsive-form-max-width($respinsive-width) {
   section[style] {
     height: unset;
+  }
+}
+
+//  Button Animation
+$anime-time: 8s;
+
+$box-size: 150px;
+$clip-distance: 0.05;
+$clip-size: $box-size * (1 + $clip-distance * 2);
+$path-width: 2px;
+
+%full-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+// #regBtn {
+//   // @extend %full-fill;
+//   position: relative;
+//   width: 200px;
+//   height: 50px;
+//   //margin: auto;
+//   margin-left: 10%;
+//   //margin-right: auto;
+//   background: rgba(#000, 0.1);
+//   color: $primary-color;
+//   box-shadow: inset 0 0 0 1px rgba($primary-color, 0.5);
+
+//   &::before,
+//   &::after {
+//     @extend %full-fill;
+//     content: "";
+//     //z-index: -1;
+//     margin: -1 * $clip-distance * 100%;
+//     box-shadow: inset 0 0 0 $path-width;
+//     animation: clipMe $anime-time linear infinite;
+//   }
+
+//   &::before {
+//     animation-delay: $anime-time * -0.5;
+//   }
+// }
+
+// @keyframes clipMe {
+//   0%,
+//   100% {
+//     clip: rect(0px, $clip-size, $path-width, 0px);
+//   }
+//   25% {
+//     clip: rect(0px, $path-width, $clip-size, 0px);
+//   }
+//   50% {
+//     clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px);
+//   }
+//   75% {
+//     clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width);
+//   }
+// }
+#regBtn {
+  font-size: 1.5em;
+}
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  padding: 10px 100px;
+  border: 0px solid $primary-color;
+  background-color: transparent;
+  border-radius: 4px;
+  color: $primary-color;
+  box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.2), 0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
+
+  @include responsive-form-max-width(365px) {
+    padding: 10px 80px;
+  }
+}
+
+.ripple:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgb(255, 255, 255) 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  animation: anim 1.2s ease-in-out infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(10, 10);
+    opacity: 0;
   }
 }

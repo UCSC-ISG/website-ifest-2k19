@@ -11,10 +11,51 @@
     grid-template-rows: auto 50px;
     color: white;
 
+    .logo-container {
+      .logo-container__inner {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 200px;
+        padding-bottom: 30px;
+        @include responsive-form-max-width(518px) {
+          grid-template-columns: 150px;
+        }
+        .logo {
+        }
+      }
+    }
+
     .heading{
       margin: auto;
       text-align: center;
       //text-decoration-color: white;
+
+      h1.icter {
+        @include responsive-form-max-width(700px) {
+          font-size: 1.8em;
+        }
+        @include responsive-form-max-width(518px) {
+          font-size: 1.5em;
+        }
+      }
+      h2.wst {
+        opacity: 0.6;
+        @include responsive-form-max-width(700px) {
+          font-size: 1.5em;
+        }
+        @include responsive-form-max-width(518px) {
+          font-size: 1.2em;
+        }
+      }
+      h2.ws {
+        color: $primary-color;
+        @include responsive-form-max-width(700px) {
+          font-size: 1.6em;
+        }
+        @include responsive-form-max-width(518px) {
+          font-size: 1.3em;
+        }
+      }
     }
   }
 }
