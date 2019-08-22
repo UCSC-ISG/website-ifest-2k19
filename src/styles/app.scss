@@ -2,6 +2,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./mixing";
 @import "../fonts/fonts";
+@import "../../node_modules/fullpage.js/dist/fullpage.min.css";
 
 $color-content: #1c1b1b;
 
@@ -60,4 +61,8 @@ a {
   &:focus {
     outline: none;
   }
+}
+
+#fp-nav {
+  display: none;
 }

@@ -2,11 +2,13 @@
 @import "variables";
 
 $navigation-background-color: $primary-color;
-$mobile-responsive-width: 464px;
-$navigation-background-color--transparent: transparentize(
-  $color: black,
-  $amount: 0.8
-);
+$mobile-responsive-width: 553px;
+// $navigation-background-color--transparent: transparentize(
+//   $color: black,
+//   $amount: 1
+// );
+
+$navigation-background-color--transparent: rgba(0, 0, 0, 0.694);
 
 #nvigation {
   height: 56px;
