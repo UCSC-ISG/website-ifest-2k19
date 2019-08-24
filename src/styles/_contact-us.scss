@@ -233,6 +233,6 @@
   }
 }
 
-.grecaptcha-badg_custom {
-  position: fixed;
+.grecaptcha-badg[style]{
+ display: none;
 }

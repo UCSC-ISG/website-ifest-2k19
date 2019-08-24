@@ -110,10 +110,11 @@ function onSubmit(token: any) {
 (<any>window).onSubmit = onSubmit;
 
 $.default(document).ready(function () {
-	const div_element: any = $.default('.grecaptcha-badge')[0].parentElement
+	
 	setTimeout(() => {
+		const div_element: any = $.default('.grecaptcha-badge')[0].parentElement
 		$.default(div_element).css({
-			'position': 'fixed',
+			'position': 'absolute',
 			'bottom': '0',
 			'right': '0',
 			'height': '0',
@@ -121,7 +122,10 @@ $.default(document).ready(function () {
 			'z-index':'-1',
 			'opacity':'0.6'
 		})
+		$.default('.grecaptcha-badge').hide(0)
 	}, 500);
+
+	
 })
 
 
