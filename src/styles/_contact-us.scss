@@ -103,7 +103,7 @@
                     border: 1px solid $primary-color;
                   }
                 }
-                p {
+                div {
                   text-align: right;
                   button {
                     padding: 0 16px;
@@ -231,4 +231,12 @@
   section[style] {
     height: unset;
   }
+}
+
+.grecaptcha-badge[style] {
+  // position: absolute;
+  // top: auto;
+  // bottom: 0;
+  // left: auto;
+  // right: 0;
 }
