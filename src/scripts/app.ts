@@ -85,31 +85,47 @@ const EmailJS = require('emailjs-com');
 
 EmailJS.init("user_5AY8slzcveJjmILxmVqZe");
 
-$.default('#submitBtn').click(function(e) {
+$.default('#submitBtn').click(function (e) {
 	e.preventDefault();
 });
 
-function onSubmit(token:any) {
+function onSubmit(token: any) {
 	// console.log("entered");
 	// var name    = document.getElementById('inputName');
-	var name=$.default("#contact-name").val();
+	var name = $.default("#contact-name").val();
 	// var email   = document.getElementById('inputEmail');
-	var email=$.default("#contact-email").val();
+	var email = $.default("#contact-email").val();
 	// var message = document.getElementById('inputMessage');
-	var message=$.default("#contact-message").val();
+	var message = $.default("#contact-message").val();
 
-	var content={"message":message,"name":name,"email":email};
+	var content = { "message": message, "name": name, "email": email };
 	// console.log(content);
-	EmailJS.send("gmail", "template_V9Ko7dFs", content, "user_5AY8slzcveJjmILxmVqZe").then(function(response:any) {
+	EmailJS.send("gmail", "template_V9Ko7dFs", content, "user_5AY8slzcveJjmILxmVqZe").then(function (response: any) {
 		console.log('SUCCESS!', response.status, response.text);
-	}, function(error:any) {
+	}, function (error: any) {
 		console.log('FAILED...', error);
 	});
 }
 
 (<any>window).onSubmit = onSubmit;
 
+$.default(document).ready(function () {
+	
+	setTimeout(() => {
+		const div_element: any = $.default('.grecaptcha-badge')[0].parentElement
+		$.default(div_element).css({
+			'position': 'absolute',
+			'bottom': '0',
+			'right': '0',
+			'height': '0',
+			'width': '0',
+			'z-index':'-1',
+			'opacity':'0.6'
+		})
+		$.default('.grecaptcha-badge').hide(0)
+	}, 500);
 
-
+	
+})
 
 
