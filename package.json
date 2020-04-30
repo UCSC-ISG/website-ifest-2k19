@@ -56,7 +56,7 @@
     "emailjs-com": "^2.3.2",
     "fullpage.js": "^3.0.7",
     "gsap": "^2.1.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.15.0"
   }
 }
